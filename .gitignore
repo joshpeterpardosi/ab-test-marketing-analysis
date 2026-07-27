@@ -1,0 +1,23 @@
+# Data - never commit raw datasets
+data/raw/*
+!data/raw/.gitkeep
+
+# Generated outputs
+outputs/*
+!outputs/.gitkeep
+
+# Environments
+.venv/
+env/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
