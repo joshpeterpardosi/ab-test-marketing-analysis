@@ -21,3 +21,6 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+
+# graphify local knowledge-graph output - never commit
+graphify-out/
