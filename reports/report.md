@@ -63,6 +63,10 @@ Sizing at baseline 2.5547%, power 0.80, alpha 0.05, two-sided:
 A 0.50 pp MDE is ample given the observed spread, requiring 34,167 users — 5.8%
 of the 588,101 in this campaign.
 
+This sizing uses the corrected power estimate — an early pass put the 0.50 pp
+MDE at ~8,500 per arm, off by roughly 2x from the formal calculation above (see
+`analysis_log.md`, "Initial power estimate was off by roughly 2x").
+
 ---
 
 ## A real number, before the assumed ones

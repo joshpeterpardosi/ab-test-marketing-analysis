@@ -57,7 +57,7 @@ Decision-by-decision rationale and corrections made mid-analysis: **[`reports/an
 
 1. Clone the repo, create a virtual environment, install `pandas`, `numpy`, `scipy`, `statsmodels`, `matplotlib`, `jupyter`.
 2. Download `marketing_AB.csv` from the Kaggle link above into `data/raw/`.
-3. Run the notebooks in `notebooks/` in order: `01_schema_check.ipynb`, then `02_phase2_hypothesis_test.ipynb`.
+3. Run the notebooks in `notebooks/` in order: `01_schema_check.ipynb`, then `02_phase2_hypothesis_test.ipynb`. `02` reproduces the test behind the [Headline result](#headline-result) above and the full statistical results in `reports/report.md`.
 
 ## Tools
 
