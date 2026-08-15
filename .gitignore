@@ -24,3 +24,12 @@ Thumbs.db
 
 # graphify local knowledge-graph output - never commit
 graphify-out/
+
+# Agent tooling — local only, never pushed
+.claude/
+.agents/
+.scratch/
+.hallmark/
+
+# Personal interview prep — local only, never pushed
+interview/
