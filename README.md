@@ -25,6 +25,8 @@ That is the finding, not a caveat.
 | Robust to timing imbalance? | Yes — full specification range 0.7066–0.7934 pp |
 | Profitable at mid-range cost assumptions (CPM 5, value 15)? | No — ROI -6.1% at point estimate |
 
+![Ad vs PSA conversion rate by day](reports/figures/06_side_by_side_descriptive.png)
+
 ## Recommendation
 
 1. **Continue the campaign.** The lift survives the pessimistic end of the interval.
@@ -55,7 +57,7 @@ Decision-by-decision rationale and corrections made mid-analysis: **[`reports/an
 
 ## Reproducing
 
-1. Clone the repo, create a virtual environment, install `pandas`, `numpy`, `scipy`, `statsmodels`, `matplotlib`, `jupyter`.
+1. Clone the repo, create a virtual environment, then `pip install -r requirements.txt`.
 2. Download `marketing_AB.csv` from the Kaggle link above into `data/raw/`.
 3. Run the notebooks in `notebooks/` in order: `01_schema_check.ipynb`, then `02_phase2_hypothesis_test.ipynb`. `02` reproduces the test behind the [Headline result](#headline-result) above and the full statistical results in `reports/report.md`.
 
