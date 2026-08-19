@@ -31,6 +31,15 @@ topline lift (0.7692 pp) — the opposite of what was expected going in.
 users per arm for a 0.50 pp MDE was corrected to the actual formal calculation:
 17,083 per arm (34,167 total, power 0.80, alpha 0.05, two-sided).
 
+**Standardized CI initially assumed the reference weights were fixed.** The
+analytic SE for the standardized lift summed weighted cell-level binomial
+variance plus the PSA rate variance, which conditions on the PSA day x hour
+weights as known. They are estimated from 23,524 users over 168 cells. A
+10,000-replicate bootstrap that resamples the weights gives [0.5991, 0.9495] pp
+against the analytic [0.6023, 0.9510] pp. The analytic interval was kept as
+primary — the gap is 0.003 pp at the lower bound and changes no ROI cell's sign —
+and the assumption is now stated rather than left implicit.
+
 **Thin-cell flag was insufficient for segment ranking.** The `thin` flag was
 defined against PSA reference weight during the standardization diagnostics, then
 reused for ad-group segment ranking. It does not transfer: Saturday 06:00
@@ -54,6 +63,7 @@ highest-weight cells (a 4.2x larger shift) separated the two.
 | "The PSA group is only 4% of the sample, is it stable?" | CI width 0.338 pp against a 0.769 pp gap. Stable enough for this comparison, though far less precise. |
 | "p = 4.85e-48 on day looks alarming." | Cramer's V is 0.0200. The association is negligible in magnitude and detectable only because of sample size. |
 | "Missing PSA rows in some hours?" | Zero hours lack PSA rows. Share ratio ranges 0.744 to 1.145 with no value near zero. |
+| "Does the standardized CI account for uncertainty in the reference weights?" | No — the analytic SE treats them as fixed. The bootstrap that resamples them is reported alongside: [0.5991, 0.9495] pp against [0.6023, 0.9510] pp. |
 | "43% relative lift seems too large." | Stated as a reason for scepticism rather than celebration, and the reason the cost scenario was run at all. |
 | "Best-performing slot is 5.68%, why not target it?" | That cell holds 5 conversions from 88 impressions. Rankings are filtered to n >= 500. |
 

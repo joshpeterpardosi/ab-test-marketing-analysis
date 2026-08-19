@@ -148,6 +148,7 @@ distribution was reweighted to the PSA group's via direct standardization.
 | Leave-one-out, 28 thin cells only        | max swing 0.00279 pp                          |
 | Excluding all thin cells (1.067% weight) | 0.7934 pp                                     |
 | Excluding 28 highest-weight cells        | 0.7066 pp                                     |
+| Bootstrap CI, reference weights resampled | [0.5991, 0.9495] pp vs analytic [0.6023, 0.9510] |
 
 The all-cell leave-one-out swing exceeds the standardization change itself, so it
 required explanation rather than reporting alone. Restricting the test to thin
@@ -157,6 +158,14 @@ highest-weight cells (a 4.2x larger shift) separated the two.
 Every specification lands between 0.7066 pp and 0.7934 pp, all inside the primary
 confidence interval and all far from zero. Standardized relative lift: 43.50%,
 consistent with the raw result (43.09%).
+
+The reported interval comes from an analytic SE that conditions on the observed
+PSA weights as fixed. Those weights are themselves estimated, from 23,524 users
+across 168 cells. A 10,000-replicate bootstrap that resamples them gives
+[0.5991, 0.9495] pp, wider by 0.003 pp at the lower bound. The analytic interval
+is kept as primary because the difference does not reach any decision threshold
+in this report, and the bootstrap is reported so the assumption is visible rather
+than implicit.
 
 ### Randomization diagnostics
 
@@ -217,6 +226,9 @@ The unfiltered top cell (Saturday 05:00, 5.68%) rests on 5 conversions from 88 i
 - **Design imbalance of 96% ads to 4% PSA.** The PSA estimate remains usable —
   its CI width of 0.338 pp is well below the 0.769 pp gap — but is far less
   precise.
+- **The confidence interval on the standardized lift treats the reference
+  weights as fixed.** Resampling them moves the lower bound by 0.003 pp. No
+  conclusion here turns on that margin.
 - **Small-cell caution.** The unfiltered top-performing cell was Saturday 05:00
   at 5.68%, resting on 5 conversions from 88 impressions. Rankings use an
   n >= 500 filter.

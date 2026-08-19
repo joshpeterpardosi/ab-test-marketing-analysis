@@ -59,7 +59,7 @@ Decision-by-decision rationale and corrections made mid-analysis: **[`reports/an
 
 1. Clone the repo, create a virtual environment, then `pip install -r requirements.txt`.
 2. Download `marketing_AB.csv` from the Kaggle link above into `data/raw/`.
-3. Run the notebooks in `notebooks/` in order: `01_schema_check.ipynb`, then `02_phase2_hypothesis_test.ipynb`. `02` reproduces the test behind the [Headline result](#headline-result) above and the full statistical results in `reports/report.md`.
+3. Run the notebooks in `notebooks/` in order: `01_schema_check.ipynb`, then `02_phase2_hypothesis_test.ipynb`. `02` reproduces the test behind the [Headline result](#headline-result) above and the full statistical results in `reports/report.md`. Running `02` regenerates the figures in `reports/figures/` in place.
 
 ## Tools
 
