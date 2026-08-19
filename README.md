@@ -61,6 +61,25 @@ Decision-by-decision rationale and corrections made mid-analysis: **[`reports/an
 2. Download `marketing_AB.csv` from the Kaggle link above into `data/raw/`.
 3. Run the notebooks in `notebooks/` in order: `01_schema_check.ipynb`, then `02_phase2_hypothesis_test.ipynb`. `02` reproduces the test behind the [Headline result](#headline-result) above and the full statistical results in `reports/report.md`. Running `02` regenerates the figures in `reports/figures/` in place.
 
+## Tests
+
+`tests/test_headline_numbers.py` recomputes every figure quoted above — group
+counts, z and p, both lift intervals, incremental conversions, mid-range ROI, and
+the experiment sizing — from `data/processed/cell_counts.csv`, a committed
+day x hour aggregate of the raw file. If an analysis change moves a number, the
+tests fail and the prose has to move with it. They need no raw data, so they run
+in CI on every push.
+
+```
+pytest -q
+```
+
+Regenerate the aggregate after any change to the raw data:
+
+```
+python scripts/export_cell_counts.py
+```
+
 ## Tools
 
 Python, pandas, numpy, scipy.stats, statsmodels, matplotlib, Jupyter, VS Code, git.
